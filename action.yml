@@ -1,4 +1,4 @@
-name: 'Pull Request Comment Trigger fork'
+name: "Pull Request Comment Trigger fork"
 description: 'Look for a "trigger word" in a pull-request description or comment, so that later steps can know whether or not to run.'
 inputs:
   reaction:
@@ -8,10 +8,6 @@ inputs:
   trigger:
     description: 'The string to look for in pull-request descriptions and comments. For example "#build/android"'
     required: true
-  prefix_only:
-    description: If 'true', the trigger must match the start of the comment.
-    required: false
-    default: "false"
   allow_arguments:
     description: If 'true', the trigger can have arguments. Can be passed via "**".
     required: false
@@ -22,8 +18,8 @@ outputs:
   comment_body:
     description: The comment body.
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
 branding:
   icon: check-circle
   color: red
