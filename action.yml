@@ -8,10 +8,6 @@ inputs:
   trigger:
     description: 'The string to look for in pull-request descriptions and comments. For example "#build/android"'
     required: true
-  prefix_only:
-    description: If 'true', the trigger must match the start of the comment.
-    required: false
-    default: "false"
   allow_arguments:
     description: If 'true', the trigger can have arguments. Can be passed via "**".
     required: false
