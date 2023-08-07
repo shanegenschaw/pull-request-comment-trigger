@@ -14,7 +14,6 @@ See the upstream pull request [`chore: GitHub upgrades` #46](https://github.com/
 ## Example usage in a workflow
 
 Your workflow needs to listen to the following events:
-
 ```
 on:
   pull_request:
@@ -65,16 +64,17 @@ And if you specify a reaction, you have to provide the `GITHUB_TOKEN` env vbl.
 
 ## Inputs
 
-| Input           | Required?            | Description                                                                                                                                    |
-| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| trigger         | Yes                  | The string to look for in pull-request descriptions and comments. The trigger should be placed at the beginning. For example "#build/android". |
-| reaction        | No (default '')      | If set, the specified emoji "reaction" is put on the comment to indicate that the trigger was detected. For example, "rocket".                 |
-| allow_arguments | No (default 'false') | If 'true', script looks for `**` markers that are considered as comment arguments.                                                             |
+| Input | Required? | Description |
+| ----- | --------- | ----------- |
+| trigger | Yes | The string to look for in pull-request descriptions and comments. The trigger should be placed at the beginning. For example "#build/android". |
+| reaction | No (default '') | If set, the specified emoji "reaction" is put on the comment to indicate that the trigger was detected. For example, "rocket". |
+| allow_arguments | No (default 'false') | If 'true', script looks for `**` markers that are considered as comment arguments. |
+
 
 ## Outputs
 
-| Output       | Description                                                     |
-| ------------ | --------------------------------------------------------------- |
-| triggered    | 'true' or 'false' depending on if the trigger phrase was found. |
-| comment_body | The comment body.                                               |
-| arguments    | The comment arguments.                                          |
+| Output | Description |
+| ------ | ----------- |
+| triggered | 'true' or 'false' depending on if the trigger phrase was found. |
+| comment_body | The comment body. |
+| arguments | The comment arguments. |
