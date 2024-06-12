@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const core = require("@actions/core");
-const { context, GitHub } = require("@actions/github");
+const { context, getOctokit } = require("@actions/github");
 
 async function run() {
     const trigger = core.getInput("trigger", { required: true });
@@ -78,16 +78,16 @@ async function run() {
         return;
     }
 
-    const client = new GitHub(GITHUB_TOKEN);
+    const client = getOctokit(GITHUB_TOKEN);
     if (context.eventName === "issue_comment") {
-        await client.reactions.createForIssueComment({
+        await client.rest.reactions.createForIssueComment({
             owner,
             repo,
             comment_id: context.payload.comment.id,
             content: reaction
         });
     } else {
-        await client.reactions.createForIssue({
+        await client.rest.reactions.createForIssue({
             owner,
             repo,
             issue_number: context.payload.pull_request.number,
