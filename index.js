@@ -16,9 +16,9 @@ async function run() {
     const body =
         (context.eventName === "issue_comment"
         // For comments on pull requests
-            ? context.payload.comment.body
+            ? context.payload.comment.body.trim()
             // For the initial pull request description
-            : context.payload.pull_request.body) || '';
+            : context.payload.pull_request.body.trim()) || '';
     core.setOutput('comment_body', body);
 
     if (
