@@ -31116,7 +31116,7 @@ async function run() {
     const prefixOnly = core.getInput("prefix_only") === 'true';
     const allowArguments = core.getInput("allow_arguments") === 'true';
 
-    let hasTrigger = body.startsWith(trigger);
+    let hasTrigger = (prefixOnly && body.startsWith(trigger)) || body.includes(trigger);
 
     if (allowArguments) {
         let regexRawTrigger = trigger.replace(/\s\*{2}/g, ' [^\\s]+');
@@ -31132,7 +31132,7 @@ async function run() {
         hasTrigger = regexTrigger.test(body);
     }
 
-    if ((prefixOnly && !hasTrigger) || !hasTrigger) {
+    if (!hasTrigger) {
         core.setOutput("triggered", "false");
         return;
     }
