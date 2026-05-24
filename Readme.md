@@ -29,7 +29,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: shanegenschaw/pull-request-comment-trigger@v2.1.0
+      - uses: shanegenschaw/pull-request-comment-trigger@v4.0.0
         id: check
         with:
           trigger: '@deploy'
@@ -47,7 +47,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: shanegenschaw/pull-request-comment-trigger@v2.1.0
+      - uses: shanegenschaw/pull-request-comment-trigger@v4.0.0
         id: check
         with:
           trigger: '@deploy **'

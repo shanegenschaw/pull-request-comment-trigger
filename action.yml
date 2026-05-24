@@ -22,7 +22,7 @@ outputs:
   comment_body:
     description: The comment body.
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
 branding:
   icon: check-circle

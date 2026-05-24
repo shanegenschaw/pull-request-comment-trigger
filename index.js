@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const core = require("@actions/core");
-const { context, getOctokit } = require("@actions/github");
+import * as core from '@actions/core';
+import {context, getOctokit} from '@actions/github';
 
 async function run() {
     const trigger = core.getInput("trigger", { required: true });
